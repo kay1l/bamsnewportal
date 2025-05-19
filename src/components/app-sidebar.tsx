@@ -2,16 +2,22 @@
 
 import * as React from "react"
 import {
-  AudioWaveform,
-  BookOpen,
-  Bot,
-  Command,
-  Frame,
   GalleryVerticalEnd,
   Map,
-  PieChart,
-  Settings2,
-  SquareTerminal,
+  Droplets,
+  ShieldCheck,
+  Factory,
+  Hammer,
+  Car,
+  Box,
+  Settings,
+  Bell,
+  HelpCircle,
+  Mail,
+  UserPlus,
+  Network,
+  BadgeCheck,
+  FileBadge2,
 } from "lucide-react"
 
 import { NavMain } from "@/components/nav-main"
@@ -24,6 +30,7 @@ import {
   SidebarHeader,
   SidebarRail,
 } from "@/components/ui/sidebar"
+import logoImage from "@/assets/logo.png"
 
 const data = {
   user: {
@@ -34,20 +41,15 @@ const data = {
   teams: [
     {
       name: "Bams Group Home",
-      logo: GalleryVerticalEnd,
+      logo: logoImage,
       plan: "Bams.au",
-    },
-    {
-      name: "Acme Corp.",
-      logo: AudioWaveform,
-      plan: "Startup",
     },
   ],
   navMain: [
     {
       title: "Traffic Control",
       url: "#",
-      icon: SquareTerminal,
+      icon: Map,
       items: [
         {
           title: "Jobs",
@@ -86,11 +88,11 @@ const data = {
     {
       title: "Hygiene Management",
       url: "#",
-      icon: Bot,
+      icon: Droplets,
       items: [
         {
           title: "Jobs",
-          url: "#",
+          url: "/hygiene_management/jobs",
         },
         {
           title: "Contacts",
@@ -125,7 +127,7 @@ const data = {
     {
       title: "Security",
       url: "#",
-      icon: BookOpen,
+      icon: ShieldCheck,
       items: [
         {
           title: "Jobs",
@@ -164,7 +166,7 @@ const data = {
     {
       title: "Manufacturing",
       url: "#",
-      icon: Settings2,
+      icon: Factory,
       items: [
         {
           title: "Jobs",
@@ -203,7 +205,7 @@ const data = {
     {
       title: "Construction",
       url: "#",
-      icon: Settings2,
+      icon: Hammer,
       items: [
         {
           title: "Jobs",
@@ -241,46 +243,24 @@ const data = {
     },
     {
       title: "Vehicles",
-      url: "#",
-      icon: Settings2,
-      items: [
-        {
-          title: "General",
-          url: "#",
-        },
-        {
-          title: "Team",
-          url: "#",
-        },
-        {
-          title: "Billing",
-          url: "#",
-        },
-        {
-          title: "Limits",
-          url: "#",
-        },
-      ],
+      url: "https://au.mixtelematics.com/#/login",
+      icon: Car,
     },
     {
       title: "Assets",
       url: "#",
-      icon: Settings2,
+      icon: Box,
       items: [
         {
-          title: "General",
+          title: "Asset Scheduling",
           url: "#",
         },
         {
-          title: "Team",
+          title: "Asset Tracking",
           url: "#",
         },
         {
-          title: "Billing",
-          url: "#",
-        },
-        {
-          title: "Limits",
+          title: "Asset Register",
           url: "#",
         },
       ],
@@ -288,22 +268,66 @@ const data = {
     {
       title: "Admin",
       url: "#",
-      icon: Settings2,
+      icon: Settings,
       items: [
         {
-          title: "General",
+          title: "Hubspot",
           url: "#",
         },
         {
-          title: "Team",
+          title: "Profiles and Capability Statement",
           url: "#",
         },
         {
-          title: "Billing",
+          title: "BMS Licenses",
           url: "#",
         },
         {
-          title: "Limits",
+          title: "Bams Logs",
+          url: "#",
+        },
+        {
+          title: "Brochures & Flyers ",
+          url: "#",
+        },
+        {
+          title: "Business Cards",
+          url: "#",
+        },
+        {
+          title: "Human Capital",
+          url: "#",
+        },
+        {
+          title: "Insurances & Certificates",
+          url: "#",
+        },
+        {
+          title: "Bams Logos",
+          url: "#",
+        },
+        {
+          title: "Slideshows & Presentations",
+          url: "#",
+        },
+        {
+          title: "Stationary",
+          url: "#",
+        },
+        {
+          title: "Accreditation",
+          url: "#",
+        },
+        {
+          title: "Associations",
+          url: "#",
+        },
+        {
+          title: "Certifications",
+          url: "#",
+        },
+        {
+          title: "Licensee",
           url: "#",
         },
       ],
@@ -311,91 +335,41 @@ const data = {
     {
       title: "Notices",
       url: "#",
-      icon: Settings2,
-      items: [
-        {
-          title: "General",
-          url: "#",
-        },
-        {
-          title: "Team",
-          url: "#",
-        },
-        {
-          title: "Billing",
-          url: "#",
-        },
-        {
-          title: "Limits",
-          url: "#",
-        },
-      ],
+      icon: Bell,
     },
     {
       title: "Enquiry",
       url: "#",
-      icon: Settings2,
-      items: [
-        {
-          title: "General",
-          url: "#",
-        },
-        {
-          title: "Team",
-          url: "#",
-        },
-        {
-          title: "Billing",
-          url: "#",
-        },
-        {
-          title: "Limits",
-          url: "#",
-        },
-      ],
+      icon: HelpCircle,
     },
     {
       title: "Email",
-      url: "#",
-      icon: Settings2,
-      items: [
-        {
-          title: "General",
-          url: "#",
-        },
-        {
-          title: "Team",
-          url: "#",
-        },
-        {
-          title: "Billing",
-          url: "#",
-        },
-        {
-          title: "Limits",
-          url: "#",
-        },
-      ],
+      url: "https://outlook.office.com/mail/",
+      icon: Mail,
     },
     {
       title: "Contacts",
       url: "#",
-      icon: Settings2,
+      icon: UserPlus,
       items: [
         {
-          title: "General",
+          title: "All contacts",
           url: "#",
         },
         {
-          title: "Team",
+          title: "Clients",
           url: "#",
         },
         {
-          title: "Billing",
+          title: "Suppliers",
           url: "#",
         },
         {
-          title: "Limits",
+          title: "Contractors",
+          url: "#",
+        },
+        {
+          title: "Bams Employees",
           url: "#",
         },
       ],
@@ -403,72 +377,18 @@ const data = {
 
     {
       title: "Hubspot",
-      url: "#",
-      icon: Settings2,
-      items: [
-        {
-          title: "General",
-          url: "#",
-        },
-        {
-          title: "Team",
-          url: "#",
-        },
-        {
-          title: "Billing",
-          url: "#",
-        },
-        {
-          title: "Limits",
-          url: "#",
-        },
-      ],
+      url: "https://app.hubspot.com/login/?loginRedirectUrl=https%3A%2F%2Fapp.hubspot.com%2Fcontacts%2F8004478%2Fdeals%2Fboard%2Fview%2Fall%2F&authFailureReason=401%20Unauthorized&loginPortalId=8004478",
+      icon: Network,
     },
     {
       title: "Employment Hero",
       url: "#",
-      icon: Settings2,
-      items: [
-        {
-          title: "General",
-          url: "#",
-        },
-        {
-          title: "Team",
-          url: "#",
-        },
-        {
-          title: "Billing",
-          url: "#",
-        },
-        {
-          title: "Limits",
-          url: "#",
-        },
-      ],
+      icon: BadgeCheck,
     },
     {
       title: "Employee File",
       url: "#",
-      icon: Settings2,
-      items: [
-        {
-          title: "General",
-          url: "#",
-        },
-        {
-          title: "Team",
-          url: "#",
-        },
-        {
-          title: "Billing",
-          url: "#",
-        },
-        {
-          title: "Limits",
-          url: "#",
-        },
-      ],
+      icon: FileBadge2,
     },
     
   ],

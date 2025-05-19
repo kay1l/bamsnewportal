@@ -81,7 +81,7 @@ export function CustomTable() {
           <TableHead>Contact</TableHead>
           <TableHead>Mobile</TableHead>
           <TableHead>Status</TableHead>
-          <TableHead>Action</TableHead>
+          <TableHead className="text-right">Action</TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>
@@ -93,7 +93,7 @@ export function CustomTable() {
             <TableCell>{data.contact}</TableCell>
             <TableCell>{data.mobile}</TableCell>
             <TableCell>{data.status}</TableCell>
-            <TableCell className="flex gap-2">
+            <TableCell className="flex gap-2 text-right">
               <Button
                 variant="outline"
                 size="icon">
