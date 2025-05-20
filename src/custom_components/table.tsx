@@ -22,7 +22,7 @@ const datas = [
     project: "Most Bless Nights 2025 Week 5",
     client: "Liverpool City Council",
     contact: "Kelly Standley",
-    email: "kelly.standley@liverpoolcitycouncil.com",
+    email: "kelly.standley@liverpoolcitycouncil.com", 
     mobile: "02 8711 7641",
     status: "Quote",
   },
@@ -31,7 +31,7 @@ const datas = [
     project: "161 MacPherson Street Bronte",
     client: "LP Constructions",
     contact: "Lawrence Paulraj",
-    email: "lawrence.paulraj@lpconstructions.com",
+    email: "lawrence.paulraj@lpconstructions.com", 
     mobile: "0433634727",
     status: "Quote",
   },
@@ -40,7 +40,7 @@ const datas = [
     project: "Traffic Control and Cleaning Culvert",
     client: "INHOUSE CONSULTING ENGINEERS PTY LTD",
     contact: "Wesley Folitarik",
-    email: "wesley.folitarik@inhouseconsulting.com",
+    email: "wesley.folitarik@inhouseconsulting.com", 
     mobile: "0414 064 869",
     status: "Quote",
   },
@@ -49,7 +49,7 @@ const datas = [
     project: "Astra Palm Beach/ Avalon",
     client: "Astra Limousines",
     contact: "Guido Merlino",
-    email: "guido.merlino@astralimousines.com",
+    email: "guido.merlino@astralimousines.com", 
     mobile: "132121",
     status: "Quote",
   },
@@ -58,7 +58,7 @@ const datas = [
     project: "Goodman Greenacre",
     client: "Quasar Group",
     contact: "Serge Younan",
-    email: "serge.younan@quasargroup.com",
+    email: "serge.younan@quasargroup.com", 
     mobile: "8853 5600",
     status: "Quote",
   },
@@ -67,7 +67,7 @@ const datas = [
     project: "Unity Walk 2024 Traffic Control",
     client: "turbans4austrilia",
     contact: "Amar Signh",
-    email: "amar.signh@turbans4austrilia.com",
+    email: "amar.signh@turbans4austrilia.com", 
     mobile: "0432 017 000",
     status: "Quote",
   },
@@ -76,11 +76,12 @@ const datas = [
     project: "Tempe High School",
     client: "Kool Water Plumbing Pty Ltd",
     contact: "Harry",
-    email: "harry@koolwaterplumbing.com",
+    email: "harry@koolwaterplumbing.com", 
     mobile: "0418963237",
     status: "Quote",
   },
 ];
+
 
 export function CustomTable() {
   return (
@@ -103,9 +104,9 @@ export function CustomTable() {
             <TableCell>{data.project}</TableCell>
             <TableCell>{data.client}</TableCell>
             <TableCell>
-              <div className="font-medium">{data.contact}</div>
-              <div className="text-xs text-muted-foreground">{data.email}</div>
-            </TableCell>
+  <div className="font-medium">{data.contact}</div>
+  <div className="text-xs text-muted-foreground">{data.email}</div>
+</TableCell>
             <TableCell>{data.mobile}</TableCell>
             <TableCell>
               <Select defaultValue={data.status}>
@@ -113,15 +114,12 @@ export function CustomTable() {
                   <SelectValue placeholder="Select status" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem className="text-xs" value="Quote">
-                    Quote
-                  </SelectItem>
-                  <SelectItem className="text-xs" value="In Progress">
-                    In Progress
-                  </SelectItem>
-                  <SelectItem className="text-xs" value="Completed">
-                    Completed
-                  </SelectItem>
+                  <SelectItem className="text-xs" value="Quote">Quote</SelectItem>
+                  <SelectItem className="text-xs" value="Quoting">Quoting</SelectItem>
+                  <SelectItem className="text-xs" value="Quote Pending">Quote Pending</SelectItem>
+                  <SelectItem className="text-xs" value="Live Job">Live Job</SelectItem>
+                  <SelectItem className="text-xs" value="Ongoing Job">Ongoing Job</SelectItem>
+                  <SelectItem className="text-xs" value="Job Completed">Job Completed</SelectItem>
                 </SelectContent>
               </Select>
             </TableCell>
