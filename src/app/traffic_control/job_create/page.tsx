@@ -1,6 +1,9 @@
-"use client"
+"use client";
+
+"use client";
 import { AppSidebar } from "@/components/app-sidebar";
 import { useRouter } from "next/navigation";
+import { Button } from "@/components/ui/button";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -15,15 +18,14 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from "@/components/ui/sidebar";
-import { CustomTable } from "@/custom_components/table";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import CreateJobForm from "@/custom_components/create_job_form";
 export default function Jobs() {
   const router = useRouter();
 
   const handleButtonClick = () => {
-    router.push('/traffic_control/job_create');
-  }
+    router.push("/traffic_control/job_create");
+  };
   return (
     <SidebarProvider>
       <AppSidebar />
@@ -53,18 +55,20 @@ export default function Jobs() {
 
         <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
           <div className="grid grid-cols-12 gap-6">
-            <div className="col-span-6">
-              <Button className="w-full" onClick={handleButtonClick}>Create New Job</Button>
+            <div className="col-span-12">
+              <Card>
+                <CardHeader>
+                  <CardTitle>Create New Job</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CreateJobForm />
+                </CardContent>
+                
+              </Card>
+              
             </div>
-            <div className="col-span-6">
-              <Button className="w-full">
-                Create New Job w/ Existing Client
-              </Button>
-            </div>
+            
           </div>
-          <Input type="search" placeholder="Search" />
-
-          <CustomTable />
         </div>
       </SidebarInset>
     </SidebarProvider>
