@@ -15,18 +15,11 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from "@/components/ui/sidebar";
-import { CustomTable } from "@/custom_components/table";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input"
-export default function Jobs() {
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import CompanyForm from "@/custom_components/form_company";
+export default function Company() {
   const router = useRouter();
 
-  const handleButtonCreate = () => {
-    router.push('/traffic_control/job_create');
-  }
-  const handleButtonCreateWithClient = () => {
-    router.push('/traffic_control/company_list');
-  }
   return (
     <SidebarProvider>
       <AppSidebar />
@@ -56,18 +49,20 @@ export default function Jobs() {
 
         <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
           <div className="grid grid-cols-12 gap-6">
-            <div className="col-span-6">
-              <Button className="w-full" onClick={handleButtonCreate}>Create New Job</Button>
+            <div className="col-span-12 w-full">
+              <Card className="w-full">
+                <CardHeader>
+                  <CardTitle>Create New Job</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CompanyForm />
+                </CardContent>
+                
+              </Card>
+              
             </div>
-            <div className="col-span-6">
-              <Button className="w-full" onClick={handleButtonCreateWithClient}>
-                Create New Job w/ Existing Client
-              </Button>
-            </div>
+            
           </div>
-          <Input type="search" placeholder="Search" />
-
-          <CustomTable />
         </div>
       </SidebarInset>
     </SidebarProvider>

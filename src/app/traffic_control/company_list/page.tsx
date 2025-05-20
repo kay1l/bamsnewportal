@@ -18,14 +18,11 @@ import {
 import { CustomTable } from "@/custom_components/table";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input"
-export default function Jobs() {
+import CompanyListPage from "@/custom_components/select_company";
+export default function Company() {
   const router = useRouter();
-
   const handleButtonCreate = () => {
-    router.push('/traffic_control/job_create');
-  }
-  const handleButtonCreateWithClient = () => {
-    router.push('/traffic_control/company_list');
+    router.push('/traffic_control/company_create')
   }
   return (
     <SidebarProvider>
@@ -57,17 +54,15 @@ export default function Jobs() {
         <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
           <div className="grid grid-cols-12 gap-6">
             <div className="col-span-6">
-              <Button className="w-full" onClick={handleButtonCreate}>Create New Job</Button>
+            <Button className="w-full" onClick={handleButtonCreate} >Register New Company</Button>
             </div>
             <div className="col-span-6">
-              <Button className="w-full" onClick={handleButtonCreateWithClient}>
-                Create New Job w/ Existing Client
-              </Button>
             </div>
           </div>
           <Input type="search" placeholder="Search" />
 
-          <CustomTable />
+          <CompanyListPage />
+
         </div>
       </SidebarInset>
     </SidebarProvider>

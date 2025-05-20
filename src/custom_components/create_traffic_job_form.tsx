@@ -7,7 +7,8 @@ import * as z from "zod";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-
+import Image from "next/image";
+import CompanyLogo from "@/assets/BAMS-est-1990-logo-black.png";
 import {
   Form,
   FormControl,
@@ -114,18 +115,26 @@ export default function CreateJobForm() {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="space-y-4 w-full py-10 mx-auto py-10"
-      >
-        <div className="text-sm text-gray-700 mb-6">
-          <p>
-            <strong>Phone:</strong> +61 2 9826 0666 | <strong>Email:</strong>{" "}
-            office@bams.com.au | <strong>Website:</strong> bams.com.au
-          </p>
-          <p>
-            PO Box 698 Liverpool NSW 2170 <br /> <strong>ABN:</strong> 93 666
-            476 375
-          </p>
-        </div>
+        className="space-y-4 w-full py-10 mx-auto py-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                 <div className="text-sm text-gray-700 md:col-span-2 flex flex-col justify-center">
+                   <p>
+                     <strong>Phone:</strong> +61 2 9826 0666 | <strong>Email:</strong>{" "}
+                     office@bams.com.au | <strong>Website:</strong> bams.com.au
+                   </p>
+                   <p className="mt-2">
+                     PO Box 698 Liverpool NSW 2170 <br /> <strong>ABN:</strong> 93 666
+                     476 375
+                   </p>
+                 </div>
+                 <div>
+                   <Image
+                     src={CompanyLogo}
+                     alt="Company Logo"
+                     className="w-32 md:w-full h-auto object-contain"
+                   />
+                 </div>
+               </div>
         <div className="text-center mb-4">
           <h2 className="text-2xl font-semibold">Reference Card</h2>
         </div>
