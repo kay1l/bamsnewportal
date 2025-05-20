@@ -1,13 +1,19 @@
 import {
     Table,
     TableBody,
-    TableCaption,
     TableCell,
     TableFooter,
     TableHead,
     TableHeader,
     TableRow,
   } from "@/components/ui/table";
+  import {
+    Select,
+    SelectContent,
+    SelectItem,
+    SelectTrigger,
+    SelectValue,
+  } from "@/components/ui/select";
   import { Button } from "@/components/ui/button";
   import { Pencil, Trash, ChevronRight } from "lucide-react"
   const datas = [
@@ -17,7 +23,7 @@ import {
       client: "Century 21 City Quarter",
       contact: "Olesya Kucherenko",
       mobile: "0477077494",
-      status: "Qoute",
+      status: "Quote",
     },
     {
       ref_num: "5556",
@@ -25,7 +31,7 @@ import {
       client: "JV Constructions",
       contact: "Alex Said",
       mobile: "0434 880 764",
-      status: "Qoute",
+      status: "Quote",
     },
     {
       ref_num: "5530",
@@ -33,7 +39,7 @@ import {
       client: "RBS - Raguz Building Services",
       contact: "Bea Sunglao",
       mobile: "0450 862 172",
-      status: "Qoute",
+      status: "Quote",
     },
     {
       ref_num: "5529",
@@ -41,7 +47,7 @@ import {
       client: "TEXCO CONSTRUCTION (NSW) PTY LTD",
       contact: "Alexa Hamm",
       mobile: "0448 674 356",
-      status: "Qoute",
+      status: "Quote",
     },
     {
       ref_num: "5503",
@@ -49,7 +55,7 @@ import {
       client: "Subway kogarah",
       contact: "Dips Patel",
       mobile: "0420640110",
-      status: "Qoute",
+      status: "Quote",
     },
     {
       ref_num: "5495",
@@ -57,7 +63,7 @@ import {
       client: "QT Hotels and Resorts Pty Limited",
       contact: "Emily Russo",
       mobile: "0451 132 734",
-      status: "Qoute",
+      status: "Quote",
     },
     {
       ref_num: "5494",
@@ -65,7 +71,7 @@ import {
       client: "FiDEM property construction",
       contact: "Joseph Eskander",
       mobile: "0433 805 742",
-      status: "Qoute",
+      status: "Quote",
     },
   ];
   
@@ -92,7 +98,18 @@ import {
               <TableCell>{data.client}</TableCell>
               <TableCell>{data.contact}</TableCell>
               <TableCell>{data.mobile}</TableCell>
-              <TableCell>{data.status}</TableCell>
+              <TableCell>
+              <Select defaultValue={data.status}>
+                <SelectTrigger className="w-[100px] text-xs">
+                  <SelectValue placeholder="Select status" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem className="text-xs" value="Quote">Quote</SelectItem>
+                  <SelectItem className="text-xs" value="In Progress">In Progress</SelectItem>
+                  <SelectItem className="text-xs" value="Completed">Completed</SelectItem>
+                </SelectContent>
+              </Select>
+            </TableCell>
               <TableCell className="flex gap-2 text-right">
                 <Button
                   variant="outline"
