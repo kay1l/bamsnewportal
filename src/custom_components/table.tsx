@@ -15,7 +15,11 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
-import { Pencil, Trash, ChevronRight } from "lucide-react";
+import { Pencil, Trash } from "lucide-react";
+import { useRouter } from "next/navigation";
+
+
+
 const datas = [
   {
     ref_num: "5502",
@@ -84,6 +88,10 @@ const datas = [
 
 
 export function CustomTable() {
+  const router = useRouter();
+  const handleButtonEditClick = () => {
+    router.push('/traffic_control/job_update')
+  }
   return (
     <Table>
       <TableHeader>
@@ -125,7 +133,7 @@ export function CustomTable() {
             </TableCell>
 
             <TableCell className="flex gap-2 text-right">
-              <Button variant="outline" size="icon">
+              <Button onClick={handleButtonEditClick} variant="outline" size="icon">
                 <Pencil className="h-4 w-4" />
               </Button>
               <Button variant="destructive" size="icon">
