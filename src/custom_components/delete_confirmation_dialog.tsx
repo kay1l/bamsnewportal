@@ -36,6 +36,7 @@ import {
                 <li><strong>Ref#:</strong> {data.ref_num}</li>
                 <li><strong>Project:</strong> {data.project}</li>
                 <li><strong>Client:</strong> {data.client}</li>
+                <li><strong>Client:</strong> {data.client}</li>
               </ul>
             </DialogDescription>
           </DialogHeader>
