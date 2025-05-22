@@ -22,6 +22,16 @@ import { Pencil, Trash } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { DeleteConfirmationDialog } from "./delete_confirmation_dialog";
 
+type TableData = {
+  ref_num: string;
+  project: string;
+  client: string;
+  contact: string;
+  email: string;
+  mobile: string;
+  status: string;
+};
+
 const datas = [
   {
     ref_num: "5502",
@@ -88,20 +98,32 @@ const datas = [
   },
 ];
 
-export function CustomTable() {
+export function CustomTable({
+  onEdit, 
+  basePath
+}: {
+  onEdit: (data: TableData) => void;
+  basePath: string;
+}) {
+
   const router = useRouter();
   const [open, setOpen] = useState(false);
-  const [selectedData, setSelectedData] = useState({
+  const [selectedData, setSelectedData] = useState<TableData>({
     ref_num: "",
     project: "",
     client: "",
+    contact: "",
+    email: "",
+    mobile: "",
+    status: "",
   });
 
-  const handleButtonEditClick = () => {
-    router.push("/traffic_control/job_update");
+  const handleButtonEditClick = (data: TableData) => {
+    // onEdit(data); 
+    router.push(`/${basePath}/job_update`);
   };
 
-  const handleDeleteClick = (data: { ref_num: string; project: string; client: string }) => {
+  const handleDeleteClick = (data: TableData) => {
     setSelectedData(data);
     setOpen(true);
   };
@@ -155,18 +177,14 @@ export function CustomTable() {
                 </Select>
               </TableCell>
               <TableCell className="flex gap-2 text-right">
-                <Button onClick={handleButtonEditClick} variant="outline" size="icon">
+                <Button onClick={() => handleButtonEditClick(data)} variant="outline" size="icon">
                   <Pencil className="h-4 w-4" />
                 </Button>
                 <Button
                   variant="destructive"
                   size="icon"
                   onClick={() =>
-                    handleDeleteClick({
-                      ref_num: data.ref_num,
-                      project: data.project,
-                      client: data.client,
-                    })
+                    handleDeleteClick(data)
                   }
                 >
                   <Trash className="h-4 w-4" />

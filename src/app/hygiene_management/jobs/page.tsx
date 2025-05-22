@@ -1,3 +1,4 @@
+"use client"
 import { AppSidebar } from "@/components/app-sidebar";
 import {
   Breadcrumb,
@@ -13,12 +14,19 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from "@/components/ui/sidebar";
-import { Pencil, Trash, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { SearchBar } from "@/custom_components/seachbar";
 import { Input } from "@/components/ui/input"
 import { CustomTable } from "@/custom_components/table";
+import { useRouter } from "next/navigation";
 export default function Jobs() {
+  const router = useRouter();
+
+  const handleButtonCreate = () => {
+    router.push('/hygiene_management/job_create');
+  }
+  const handleButtonCreateWithClient = () => {
+    router.push('/hygiene_management/company_list');
+  }
   return (
     <SidebarProvider>
       <AppSidebar />
@@ -49,17 +57,21 @@ export default function Jobs() {
         <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
           <div className="grid grid-cols-12 gap-6">
             <div className="col-span-6">
-              <Button className="w-full">Create New Job</Button>
+              <Button className="w-full" onClick={handleButtonCreate}>Create New Job</Button>
             </div>
             <div className="col-span-6">
-              <Button className="w-full">
+              <Button className="w-full" onClick={handleButtonCreateWithClient}>
                 Create New Job w/ Existing Client
               </Button>
             </div>
           </div>
           <Input type="search" placeholder="Search" />
 
-          <CustomTable />
+          <CustomTable basePath="hygiene_management"
+          onEdit={(data) => {
+            console.log("Editing job:", data.ref_num);
+          }}
+          />
         </div>
       </SidebarInset>
     </SidebarProvider>

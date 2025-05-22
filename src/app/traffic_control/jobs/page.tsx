@@ -67,7 +67,11 @@ export default function Jobs() {
           </div>
           <Input type="search" placeholder="Search" />
 
-          <CustomTable />
+          <CustomTable basePath="traffic_control"
+          onEdit={(data) => {
+            console.log("Editing job:", data.ref_num);
+          }}
+          />
         </div>
       </SidebarInset>
     </SidebarProvider>

@@ -1,9 +1,6 @@
-"use client";
-
-"use client";
+"use client"
 import { AppSidebar } from "@/components/app-sidebar";
 import { useRouter } from "next/navigation";
-import { Button } from "@/components/ui/button";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -19,9 +16,10 @@ import {
   SidebarTrigger,
 } from "@/components/ui/sidebar";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import CreateJobForm from "@/custom_components/traffic_control_forms/create_job_form";
-export default function Jobs() {
+import CompanyForm from "@/custom_components/form_company";
+export default function CompanyCreate() {
   const router = useRouter();
+
   return (
     <SidebarProvider>
       <AppSidebar />
@@ -51,13 +49,13 @@ export default function Jobs() {
 
         <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
           <div className="grid grid-cols-12 gap-6">
-            <div className="col-span-12">
-              <Card>
+            <div className="col-span-12 w-full">
+              <Card className="w-full">
                 <CardHeader>
-                  <CardTitle>Create New Job</CardTitle>
+                  <CardTitle>Update Contact</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <CreateJobForm />
+                  <CompanyForm />
                 </CardContent>
                 
               </Card>
