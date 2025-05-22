@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Check, ChevronsUpDown } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area'
@@ -72,31 +72,33 @@ interface LocationSelectorProps {
   onCountryChange?: (country: CountryProps | null) => void
   onStateChange?: (state: StateProps | null) => void
 }
+const countriesData = countries as CountryProps[];
+const statesData = states as StateProps[];
 
+const defaultCountry = countriesData.find((c) => c.name === 'Australia') || null
 const LocationSelector = ({
   disabled,
   onCountryChange,
   onStateChange,
 }: LocationSelectorProps) => {
-  const [selectedCountry, setSelectedCountry] = useState<CountryProps | null>(
-    null,
-  )
+  const [selectedCountry, setSelectedCountry] = useState<CountryProps | null>(defaultCountry)
   const [selectedState, setSelectedState] = useState<StateProps | null>(null)
   const [openCountryDropdown, setOpenCountryDropdown] = useState(false)
   const [openStateDropdown, setOpenStateDropdown] = useState(false)
 
-  // Cast imported JSON data to their respective types
-  const countriesData = countries as CountryProps[]
-  const statesData = states as StateProps[]
+  useEffect(() => {
+    if (defaultCountry) {
+      onCountryChange?.(defaultCountry)
+    }
+  }, [])
 
-  // Filter states for selected country
   const availableStates = statesData.filter(
     (state) => state.country_id === selectedCountry?.id,
   )
 
   const handleCountrySelect = (country: CountryProps | null) => {
     setSelectedCountry(country)
-    setSelectedState(null) // Reset state when country changes
+    setSelectedState(null) 
     onCountryChange?.(country)
     onStateChange?.(null)
   }
