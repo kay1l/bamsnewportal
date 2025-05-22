@@ -22,10 +22,10 @@ export default function Jobs() {
   const router = useRouter();
 
   const handleButtonCreate = () => {
-    router.push('/hygiene_management/job_create');
+    router.push('/manufacturing/job_create');
   }
   const handleButtonCreateWithClient = () => {
-    router.push('/hygiene_management/company_list');
+    router.push('/manufacturing/company_list');
   }
   return (
     <SidebarProvider>
@@ -67,7 +67,7 @@ export default function Jobs() {
           </div>
           <Input type="search" placeholder="Search" />
 
-          <CustomTable basePath="hygiene_management"
+          <CustomTable basePath="manufacturing"
           onEdit={(data) => {
             console.log("Editing job:", data.ref_num);
           }}

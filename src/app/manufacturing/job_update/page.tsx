@@ -19,7 +19,7 @@ import {
   SidebarTrigger,
 } from "@/components/ui/sidebar";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import UpdateJobForm from "@/custom_components/traffic_control_forms/update_job_form";
+import UpdateJobForm from "@/custom_components/manufacturing_forms/update_job_form";
 export default function UpdateCompany() {
   const router = useRouter();
 

@@ -18,11 +18,11 @@ import {
 import { CustomTable } from "@/custom_components/table";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input"
-import CompanyListPage from "@/custom_components/hygiene_select/select_company";
+import CompanyListPage from "@/custom_components/manufacturing_select/select_company";
 export default function Company() {
   const router = useRouter();
   const handleButtonCreate = () => {
-    router.push('/hygiene_management/company_create')
+    router.push('/manufacturing/company_create')
   }
   return (
     <SidebarProvider>

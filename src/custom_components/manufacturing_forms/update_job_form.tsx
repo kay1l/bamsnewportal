@@ -50,7 +50,6 @@ const formSchema = z.object({
   country: z.tuple([z.string(), z.string().optional()]),
   check: z.unknown(),
   service: z.string().min(1),
-  access: z.string().min(1),
   project_contact: z.string().min(1),
   project_phone: z.string(),
   project_email: z.string(),
@@ -77,7 +76,7 @@ const formSchema = z.object({
   officer_mobile: z.string(),
 });
 
-export default function CreateJobWithClientForm() {
+export default function CreateJobForm() {
   const [countryName, setCountryName] = useState<string>("");
   const [stateName, setStateName] = useState<string>("");
   const [currentTime, setCurrentTime] = useState(new Date());
@@ -228,7 +227,7 @@ export default function CreateJobWithClientForm() {
                   <FormLabel>Division</FormLabel>
                   <FormControl>
                     <Input
-                      placeholder="Bams Hygiene Management"
+                      placeholder="Bams Security"
                       type="text"
                       {...field}
                     />
@@ -259,7 +258,231 @@ export default function CreateJobWithClientForm() {
           </div>
         </div>
 
-  
+        <FormField
+          control={form.control}
+          name="client"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Client</FormLabel>
+              <FormControl>
+                <Input
+                  placeholder="Full company name or client name"
+                  type="text"
+                  {...field}
+                />
+              </FormControl>
+
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
+        <FormField
+          control={form.control}
+          name="abn"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Australian Business Number (ABN)</FormLabel>
+              <FormControl>
+                <Input placeholder="Client ABN" type="text" {...field} />
+              </FormControl>
+
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
+        <div className="grid grid-cols-12 gap-4">
+          <div className="col-span-6">
+            <FormField
+              control={form.control}
+              name="contact"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Contact</FormLabel>
+                  <FormControl>
+                    <Input
+                      placeholder="Client contact full name"
+                      type="text"
+                      {...field}
+                    />
+                  </FormControl>
+
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
+
+          <div className="col-span-6">
+            <FormField
+              control={form.control}
+              name="phone"
+              render={({ field }) => (
+                <FormItem className="flex flex-col items-start">
+                  <FormLabel>Phone</FormLabel>
+                  <FormControl className="w-full">
+                    <PhoneInput
+                      placeholder="Client Phone"
+                      {...field}
+                      defaultCountry="TR"
+                    />
+                  </FormControl>
+
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
+        </div>
+
+        <div className="grid grid-cols-12 gap-4">
+          <div className="col-span-6">
+            <FormField
+              control={form.control}
+              name="email"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Email</FormLabel>
+                  <FormControl>
+                    <Input placeholder="Client Email" type="email" {...field} />
+                  </FormControl>
+
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
+
+          <div className="col-span-6">
+            <FormField
+              control={form.control}
+              name="mobile"
+              render={({ field }) => (
+                <FormItem className="flex flex-col items-start">
+                  <FormLabel>Mobile</FormLabel>
+                  <FormControl className="w-full">
+                    <PhoneInput
+                      placeholder="Client Mobile"
+                      {...field}
+                      defaultCountry="TR"
+                    />
+                  </FormControl>
+
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
+        </div>
+
+        <FormField
+          control={form.control}
+          name="street"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Street</FormLabel>
+              <FormControl>
+                <Input placeholder="Client Street" type="text" {...field} />
+              </FormControl>
+
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
+        <div className="grid grid-cols-12 gap-4">
+          <div className="col-span-6">
+            <FormField
+              control={form.control}
+              name="suburb"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Suburb</FormLabel>
+                  <FormControl>
+                    <Input placeholder="Client Suburb" type="text" {...field} />
+                  </FormControl>
+
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
+
+          <div className="col-span-6">
+            <FormField
+              control={form.control}
+              name="postcode"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Postcode</FormLabel>
+                  <FormControl>
+                    <Input
+                      placeholder="Client Postcode"
+                      type="text"
+                      {...field}
+                    />
+                  </FormControl>
+
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
+        </div>
+
+        <div className="grid grid-cols-12 gap-4">
+          <div className="col-span-6">
+            <FormField
+              control={form.control}
+              name="country"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Country</FormLabel>
+                  <FormControl>
+                    <LocationSelector
+                      onCountryChange={(country) => {
+                        setCountryName(country?.name || "");
+                        form.setValue(field.name, [
+                          country?.name || "",
+                          stateName || "",
+                        ]);
+                      }}
+                      onStateChange={(state) => {
+                        setStateName(state?.name || "");
+                        form.setValue(field.name, [
+                          form.getValues(field.name)[0] || "",
+                          state?.name || "",
+                        ]);
+                      }}
+                    />
+                  </FormControl>
+
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
+        </div>
+        <FormField
+          control={form.control}
+          name="check"
+          render={({ field }) => (
+            <FormItem className="flex flex-row items-start space-x-3 space-y-0 ">
+              <FormControl>
+                <Checkbox
+                  //   checked={field.value}
+                  onCheckedChange={field.onChange}
+                />
+              </FormControl>
+              <div className="space-y-1 leading-none">
+                <FormLabel>Check if Same Contact</FormLabel>
+
+                <FormMessage />
+              </div>
+            </FormItem>
+          )}
+        />
 
         <div className="grid grid-cols-12 gap-4">
           <div className="col-span-12">
@@ -430,20 +653,7 @@ export default function CreateJobWithClientForm() {
             />
           </div>
         </div>
-        <FormField
-          control={form.control}
-          name="access"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Access Details</FormLabel>
-              <FormControl>
-                <Input placeholder="Project Entry Details" type="text" {...field} />
-              </FormControl>
 
-              <FormMessage />
-            </FormItem>
-          )}
-        />
         <div className="grid grid-cols-12 gap-4">
           <div className="col-span-6">
             <FormField
@@ -477,6 +687,25 @@ export default function CreateJobWithClientForm() {
             />
           </div>
         </div>
+
+        <FormField
+          control={form.control}
+          name="service_instructions"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Comments</FormLabel>
+              <FormControl>
+                <Textarea
+                  placeholder="Service Instruction"
+                  className=""
+                  {...field}
+                />
+              </FormControl>
+
+              <FormMessage />
+            </FormItem>
+          )}
+        />
 
 
 <div className="grid grid-cols-12 gap-4">

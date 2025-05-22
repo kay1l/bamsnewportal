@@ -17,7 +17,7 @@ import {
   SidebarTrigger,
 } from "@/components/ui/sidebar";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import CreateJobForm from "@/custom_components/hygiene_management_forms/create_job_form";
+import CreateJobForm from "@/custom_components/manufacturing_forms/create_job_form";
 export default function Jobs() {
   const router = useRouter();
   return (

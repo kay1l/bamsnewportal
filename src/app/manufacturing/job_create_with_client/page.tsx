@@ -19,12 +19,12 @@ import {
   SidebarTrigger,
 } from "@/components/ui/sidebar";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import CreateJobWithClientForm from "@/custom_components/hygiene_management_forms/create_job_with_client_form";
+import CreateJobWithClientForm from "@/custom_components/manufacturing_forms/create_job_with_client_form";
 export default function Jobs() {
   const router = useRouter();
 
   const handleButtonClick = () => {
-    router.push("/hygiene_management/job_create");
+    router.push("/manufacturing/job_create");
   };
   return (
     <SidebarProvider>
