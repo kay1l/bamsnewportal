@@ -2,6 +2,14 @@
 import { AppSidebar } from "@/components/app-sidebar";
 import { useRouter } from "next/navigation";
 import {
+  Pagination,
+  PaginationContent,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious,
+} from "@/components/ui/pagination";
+import {
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbLink,
@@ -72,6 +80,27 @@ export default function Jobs() {
             console.log("Editing job:", data.ref_num);
           }}
           />
+             <Pagination>
+            <PaginationContent>
+              <PaginationItem>
+                <PaginationPrevious href="#" />
+              </PaginationItem>
+              <PaginationItem>
+                <PaginationLink href="#" isActive>
+                  1
+                </PaginationLink>
+              </PaginationItem>
+              <PaginationItem>
+                <PaginationLink href="#">2</PaginationLink>
+              </PaginationItem>
+              <PaginationItem>
+                <PaginationLink href="#">3</PaginationLink>
+              </PaginationItem>
+              <PaginationItem>
+                <PaginationNext href="#" />
+              </PaginationItem>
+            </PaginationContent>
+          </Pagination>
         </div>
       </SidebarInset>
     </SidebarProvider>

@@ -1,5 +1,13 @@
-"use client"
+"use client";
 import { AppSidebar } from "@/components/app-sidebar";
+import {
+  Pagination,
+  PaginationContent,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious,
+} from "@/components/ui/pagination";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -15,18 +23,18 @@ import {
   SidebarTrigger,
 } from "@/components/ui/sidebar";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input"
+import { Input } from "@/components/ui/input";
 import { CustomTable } from "@/custom_components/table";
 import { useRouter } from "next/navigation";
 export default function Jobs() {
   const router = useRouter();
 
   const handleButtonCreate = () => {
-    router.push('/hygiene_management/job_create');
-  }
+    router.push("/hygiene_management/job_create");
+  };
   const handleButtonCreateWithClient = () => {
-    router.push('/hygiene_management/company_list');
-  }
+    router.push("/hygiene_management/company_list");
+  };
   return (
     <SidebarProvider>
       <AppSidebar />
@@ -57,7 +65,9 @@ export default function Jobs() {
         <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
           <div className="grid grid-cols-12 gap-6">
             <div className="col-span-6">
-              <Button className="w-full" onClick={handleButtonCreate}>Create New Job</Button>
+              <Button className="w-full" onClick={handleButtonCreate}>
+                Create New Job
+              </Button>
             </div>
             <div className="col-span-6">
               <Button className="w-full" onClick={handleButtonCreateWithClient}>
@@ -67,11 +77,33 @@ export default function Jobs() {
           </div>
           <Input type="search" placeholder="Search" />
 
-          <CustomTable basePath="hygiene_management"
-          onEdit={(data) => {
-            console.log("Editing job:", data.ref_num);
-          }}
+          <CustomTable
+            basePath="hygiene_management"
+            onEdit={(data) => {
+              console.log("Editing job:", data.ref_num);
+            }}
           />
+          <Pagination>
+            <PaginationContent>
+              <PaginationItem>
+                <PaginationPrevious href="#" />
+              </PaginationItem>
+              <PaginationItem>
+                <PaginationLink href="#" isActive>
+                  1
+                </PaginationLink>
+              </PaginationItem>
+              <PaginationItem>
+                <PaginationLink href="#">2</PaginationLink>
+              </PaginationItem>
+              <PaginationItem>
+                <PaginationLink href="#">3</PaginationLink>
+              </PaginationItem>
+              <PaginationItem>
+                <PaginationNext href="#" />
+              </PaginationItem>
+            </PaginationContent>
+          </Pagination>
         </div>
       </SidebarInset>
     </SidebarProvider>
