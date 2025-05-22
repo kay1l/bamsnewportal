@@ -120,7 +120,7 @@ export function CustomTable() {
             <TableHead>Project</TableHead>
             <TableHead>Client</TableHead>
             <TableHead>Contact</TableHead>
-            <TableHead>Mobile</TableHead>
+            <TableHead>Contact No.</TableHead>
             <TableHead>Status</TableHead>
             <TableHead className="text-right">Action</TableHead>
           </TableRow>
@@ -135,7 +135,10 @@ export function CustomTable() {
                 <div className="font-medium">{data.contact}</div>
                 <div className="text-xs text-muted-foreground">{data.email}</div>
               </TableCell>
-              <TableCell>{data.mobile}</TableCell>
+              <TableCell>
+                <div className="text-xs">{data.mobile}</div>
+                <div className="text-xs">{data.mobile}</div>
+              </TableCell>
               <TableCell>
                 <Select defaultValue={data.status}>
                   <SelectTrigger className="w-[100px] text-xs">

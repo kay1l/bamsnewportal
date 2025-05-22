@@ -17,7 +17,7 @@ import { Pencil, Trash, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SearchBar } from "@/custom_components/seachbar";
 import { Input } from "@/components/ui/input"
-import { CustomTable2 } from "@/custom_components/table2";
+import { CustomTable } from "@/custom_components/table";
 export default function Jobs() {
   return (
     <SidebarProvider>
@@ -59,7 +59,7 @@ export default function Jobs() {
           </div>
           <Input type="search" placeholder="Search" />
 
-          <CustomTable2 />
+          <CustomTable />
         </div>
       </SidebarInset>
     </SidebarProvider>
