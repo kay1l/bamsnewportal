@@ -2,24 +2,12 @@
 
 import * as React from "react"
 import {
-  GalleryVerticalEnd,
   Map,
   Droplets,
   ShieldCheck,
   Factory,
   Hammer,
-  Car,
-  Box,
-  Settings,
-  Bell,
-  HelpCircle,
-  Mail,
-  UserPlus,
-  Network,
-  BadgeCheck,
-  FileBadge2,
 } from "lucide-react"
-
 import { NavMain } from "@/components/nav-main"
 import { NavUser } from "@/components/nav-user"
 import { TeamSwitcher } from "@/components/team-switcher"
@@ -55,34 +43,6 @@ const data = {
           title: "Jobs",
           url: "/traffic_control/jobs",
         },
-        {
-          title: "Contacts",
-          url: "#",
-        },
-        {
-          title: "Assets",
-          url: "#",
-        },
-        {
-          title: "Admin",
-          url: "#",
-        },
-        {
-          title: "Schedule of Rates",
-          url: "#",
-        },
-        {
-          title: "Pay Guide",
-          url: "#",
-        },
-        {
-          title: "Staffing ",
-          url: "#",
-        },
-        {
-          title: "Notices",
-          url: "/traffic_control/notices",
-        },
       ],
     },
     {
@@ -94,34 +54,6 @@ const data = {
           title: "Jobs",
           url: "/hygiene_management/jobs",
         },
-        {
-          title: "Contacts",
-          url: "#",
-        },
-        {
-          title: "Assets",
-          url: "#",
-        },
-        {
-          title: "Admin",
-          url: "#",
-        },
-        {
-          title: "Schedule of Rates",
-          url: "#",
-        },
-        {
-          title: "Pay Guide",
-          url: "#",
-        },
-        {
-          title: "Staffing ",
-          url: "#",
-        },
-        {
-          title: "Notices",
-          url: "/hygiene_management/notices",
-        },
       ],
     },
     {
@@ -131,34 +63,6 @@ const data = {
       items: [
         {
           title: "Jobs",
-          url: "#",
-        },
-        {
-          title: "Contacts",
-          url: "#",
-        },
-        {
-          title: "Assets",
-          url: "#",
-        },
-        {
-          title: "Admin",
-          url: "#",
-        },
-        {
-          title: "Schedule of Rates",
-          url: "#",
-        },
-        {
-          title: "Pay Guide",
-          url: "#",
-        },
-        {
-          title: "Staffing ",
-          url: "#",
-        },
-        {
-          title: "Notices",
           url: "#",
         },
       ],
@@ -172,34 +76,6 @@ const data = {
           title: "Jobs",
           url: "#",
         },
-        {
-          title: "Contacts",
-          url: "#",
-        },
-        {
-          title: "Assets",
-          url: "#",
-        },
-        {
-          title: "Admin",
-          url: "#",
-        },
-        {
-          title: "Schedule of Rates",
-          url: "#",
-        },
-        {
-          title: "Pay Guide",
-          url: "#",
-        },
-        {
-          title: "Staffing ",
-          url: "#",
-        },
-        {
-          title: "Notices",
-          url: "#",
-        },
       ],
     },
     {
@@ -209,34 +85,6 @@ const data = {
       items: [
         {
           title: "Jobs",
-          url: "#",
-        },
-        {
-          title: "Contacts",
-          url: "#",
-        },
-        {
-          title: "Assets",
-          url: "#",
-        },
-        {
-          title: "Admin",
-          url: "#",
-        },
-        {
-          title: "Schedule of Rates",
-          url: "#",
-        },
-        {
-          title: "Pay Guide",
-          url: "#",
-        },
-        {
-          title: "Staffing ",
-          url: "#",
-        },
-        {
-          title: "Notices",
           url: "#",
         },
       ],
