@@ -119,7 +119,6 @@ export function CustomTable({
   });
 
   const handleButtonEditClick = (data: TableData) => {
-    // onEdit(data); 
     router.push(`/${basePath}/job_update`);
   };
 
@@ -149,7 +148,11 @@ export function CustomTable({
         </TableHeader>
         <TableBody>
           {datas.map((data) => (
-            <TableRow key={data.ref_num}>
+            <TableRow 
+            key={data.ref_num}
+            className="cursor-pointer hover:bg-muted"
+            onClick={() => router.push(`/${basePath}/jobfile_view/`)}
+            >
               <TableCell className="font-medium">{data.ref_num}</TableCell>
               <TableCell>{data.project}</TableCell>
               <TableCell>{data.client}</TableCell>
