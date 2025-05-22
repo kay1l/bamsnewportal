@@ -63,7 +63,7 @@ const data = {
       items: [
         {
           title: "Jobs",
-          url: "#",
+          url: "/security/jobs",
         },
       ],
     },
@@ -74,7 +74,7 @@ const data = {
       items: [
         {
           title: "Jobs",
-          url: "#",
+          url: "/manufacturing/jobs",
         },
       ],
     },
@@ -85,7 +85,7 @@ const data = {
       items: [
         {
           title: "Jobs",
-          url: "#",
+          url: "/construction/jobs",
         },
       ],
     },
