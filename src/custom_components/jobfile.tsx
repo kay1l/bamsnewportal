@@ -7,7 +7,6 @@ import {
   DrawerContent,
   DrawerHeader,
   DrawerTitle,
-  DrawerDescription,
   DrawerFooter,
   DrawerTrigger,
 } from "@/components/ui/drawer";
@@ -37,6 +36,7 @@ import {
   X,
 } from "lucide-react";
 
+// Mock data for files
 const files = [
   {
     id: 1,
@@ -124,6 +124,7 @@ const files = [
   },
 ];
 
+// Tool options shown on the grid
 const tools = [
   { icon: <FileText className="w-8 h-8" />, label: "Reference Card" },
   { icon: <Download className="w-8 h-8" />, label: "Enquiry Form" },
@@ -175,7 +176,8 @@ export function JobToolsGrid() {
           <Card
             key={index}
             onClick={() => handleCardClick(tool)}
-            className="flex items-center justify-center flex-col p-6 cursor-pointer hover:shadow-md transition">
+            className="flex items-center justify-center flex-col p-6 cursor-pointer hover:shadow-md transition"
+          >
             <div className="mb-2 text-black">{tool.icon}</div>
             <CardContent className="p-0 text-center font-medium text-sm">
               {tool.label}
@@ -187,20 +189,26 @@ export function JobToolsGrid() {
       <Drawer open={open} onOpenChange={setOpen}>
         <DrawerContent>
           <div className="mx-auto w-full max-w-7xl px-4 py-6">
-            <DrawerTitle>
-              Sign-in Register: 5097 - Tempe High School
-            </DrawerTitle>
-            <button
+            <div className="w-full text-center">
+              <DrawerTitle className=" mb-4 text-2xl font-semibold text-gray-800">
+                <span className="text-primary">
+                  {selectedTool?.label ?? "Tool"}
+                </span>
+              </DrawerTitle>
+            </div>
+
+            <Button
               onClick={() => setOpen(false)}
-              className="absolute top-4 right-4 p-2 rounded-full bg-gray-200 text-black hover:bg-gray-300">
+              className="absolute top-4 right-4 p-2 rounded-full bg-gray-200 text-black hover:bg-gray-300"
+            >
               <X className="w-6 h-6" />
-            </button>
+            </Button>
 
             <div className="grid grid-cols-12 gap-6">
-              {/* Left: Upload UI */}
               <div
                 className="col-span-12 md:col-span-4 border border-dashed rounded-md p-6 text-center text-gray-500 cursor-pointer relative"
-                onClick={() => document.getElementById("file-upload")?.click()}>
+                onClick={() => document.getElementById("file-upload")?.click()}
+              >
                 <UploadCloud className="mx-auto mb-2" />
                 <p>Drag and drop files here or click to browse</p>
 
@@ -209,15 +217,13 @@ export function JobToolsGrid() {
                   type="file"
                   multiple
                   className="hidden"
-                  onChange={handleFileChange} />
+                  onChange={handleFileChange}
+                />
 
                 {file && (
                   <div className="mt-4">
                     <p>Selected File: {file.name}</p>
-                    <Button
-                      onClick={handleFileUpload} 
-                      className="mt-4 w-full"
-                    >
+                    <Button onClick={handleFileUpload} className="mt-4 w-full">
                       Upload
                     </Button>
                   </div>
