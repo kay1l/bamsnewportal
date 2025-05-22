@@ -5,25 +5,25 @@ import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
-type CompanyItem = {
+type ContactItem = {
   id: string;
   name: string;
 };
 
-type CompanyListProps = {
-  items: CompanyItem[];
+type ContactListProps = {
+  items: ContactItem[];
 };
 
-const CompanyList: React.FC<CompanyListProps> = ({ items }) => {
+const CompanyList: React.FC<ContactListProps> = ({ items }) => {
   const router = useRouter();
 
   const handleCardClick = (id: string) => {
-    router.push(`/traffic_control/contact_list`);
+    router.push(`/traffic_control/job_create_with_client`);
   };
 
   const handleEditClick = (id: string, e: React.MouseEvent) => {
     e.stopPropagation(); 
-    router.push(`/traffic_control/company_update`);
+    router.push(`/traffic_control/contact_update`);
   };
 
   return (
@@ -47,13 +47,12 @@ const CompanyList: React.FC<CompanyListProps> = ({ items }) => {
   );
 };
 
-const companyData: CompanyItem[] = [
-  { id: "1", name: "z TC Company" },
-  { id: "2", name: "na" },
+const contactData: ContactItem[] = [
+  { id: "1", name: "TC Company Contact Name" },
 ];
 
-const CompanyListPage: React.FC = () => {
-  return <CompanyList items={companyData} />;
+const ContactListPage: React.FC = () => {
+  return <CompanyList items={contactData} />;
 };
 
-export default CompanyListPage;
+export default ContactListPage;

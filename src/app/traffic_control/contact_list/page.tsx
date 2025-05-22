@@ -1,9 +1,6 @@
-"use client";
-
-"use client";
+"use client"
 import { AppSidebar } from "@/components/app-sidebar";
 import { useRouter } from "next/navigation";
-import { Button } from "@/components/ui/button";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -18,11 +15,16 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from "@/components/ui/sidebar";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import CreateJobForm from "@/custom_components/create_traffic_job_form";
-export default function Jobs() {
+import { CustomTable } from "@/custom_components/table";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input"
+import CompanyListPage from "@/custom_components/select_company";
+import ContactListPage from "@/custom_components/select_contact";
+export default function Company() {
   const router = useRouter();
-
+  const handleButtonCreate = () => {
+    router.push('/traffic_control/company_create')
+  }
   return (
     <SidebarProvider>
       <AppSidebar />
@@ -52,20 +54,16 @@ export default function Jobs() {
 
         <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
           <div className="grid grid-cols-12 gap-6">
-            <div className="col-span-12">
-              <Card>
-                <CardHeader>
-                  <CardTitle>Create New Job</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CreateJobForm />
-                </CardContent>
-                
-              </Card>
-              
+            <div className="col-span-6">
+            <Button className="w-full" onClick={handleButtonCreate} >Register New Company</Button>
             </div>
-            
+            <div className="col-span-6">
+            </div>
           </div>
+          <Input type="search" placeholder="Search" />
+
+          <ContactListPage/>
+
         </div>
       </SidebarInset>
     </SidebarProvider>

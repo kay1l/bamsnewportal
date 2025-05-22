@@ -20,9 +20,13 @@ import {
 } from "@/components/ui/sidebar";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import CreateJobForm from "@/custom_components/create_traffic_job_form";
+import CreateJobWithClientForm from "@/custom_components/create_traffic_job_with_client_form";
 export default function Jobs() {
   const router = useRouter();
 
+  const handleButtonClick = () => {
+    router.push("/traffic_control/job_create");
+  };
   return (
     <SidebarProvider>
       <AppSidebar />
@@ -58,7 +62,7 @@ export default function Jobs() {
                   <CardTitle>Create New Job</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <CreateJobForm />
+                  <CreateJobWithClientForm />
                 </CardContent>
                 
               </Card>
