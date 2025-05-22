@@ -376,6 +376,10 @@ export default function CreateJobForm() {
           </div>
         </div>
 
+ 
+
+        <div className="grid grid-cols-12 gap-4">
+        <div className="col-span-4">
         <FormField
           control={form.control}
           name="street"
@@ -390,9 +394,8 @@ export default function CreateJobForm() {
             </FormItem>
           )}
         />
-
-        <div className="grid grid-cols-12 gap-4">
-          <div className="col-span-6">
+  </div>
+          <div className="col-span-4">
             <FormField
               control={form.control}
               name="suburb"
@@ -409,7 +412,7 @@ export default function CreateJobForm() {
             />
           </div>
 
-          <div className="col-span-6">
+          <div className="col-span-4">
             <FormField
               control={form.control}
               name="postcode"
@@ -595,6 +598,11 @@ export default function CreateJobForm() {
           </div>
         </div>
 
+
+        <div className="grid grid-cols-12 gap-4">
+
+          <div className="col-span-4">
+
         <FormField
           control={form.control}
           name="project_street"
@@ -609,9 +617,8 @@ export default function CreateJobForm() {
             </FormItem>
           )}
         />
-
-        <div className="grid grid-cols-12 gap-4">
-          <div className="col-span-6">
+          </div>
+          <div className="col-span-4">
             <FormField
               control={form.control}
               name="project_suburb"
@@ -632,7 +639,7 @@ export default function CreateJobForm() {
             />
           </div>
 
-          <div className="col-span-6">
+          <div className="col-span-4">
             <FormField
               control={form.control}
               name="project_postcode"
@@ -827,7 +834,12 @@ export default function CreateJobForm() {
           </div>
         </div>
 
-        <FormField
+   
+
+        <div className="grid grid-cols-12 gap-4">
+
+          <div className="col-span-4">
+          <FormField
           control={form.control}
           name="payment_street"
           render={({ field }) => (
@@ -841,9 +853,8 @@ export default function CreateJobForm() {
             </FormItem>
           )}
         />
-
-        <div className="grid grid-cols-12 gap-4">
-          <div className="col-span-6">
+          </div>
+          <div className="col-span-4">
             <FormField
               control={form.control}
               name="payment_suburb"
@@ -860,7 +871,7 @@ export default function CreateJobForm() {
             />
           </div>
 
-          <div className="col-span-6">
+          <div className="col-span-4">
             <FormField
               control={form.control}
               name="payment_postcode"
@@ -870,7 +881,6 @@ export default function CreateJobForm() {
                   <FormControl>
                     <Input placeholder="Postcode" type="" {...field} />
                   </FormControl>
-
                   <FormMessage />
                 </FormItem>
               )}
