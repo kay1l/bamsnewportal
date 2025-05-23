@@ -28,7 +28,7 @@ jobs:
         uses: pressidium/lftp-mirror-action@v1
         with:
           host: 'ftp.bams.com.au'
-          username: 'portal_react@testportal.bams.com.au'
-          password: 'Wb*IVek5{^9t'
+          user: 'portal_react@testportal.bams.com.au'
+          pass: 'Wb*IVek5{^9t'
           port: 21
         
