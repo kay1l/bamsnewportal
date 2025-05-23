@@ -1,0 +1,34 @@
+name: React_Portal
+
+on:
+  push:
+    branches:
+      - main  
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v3
+
+      - name: 🟢 Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: 📦 Install dependencies
+        run: npm install  
+
+      - name: 🔧 Build project
+        run: npm run build  
+
+      - name: 📁 Upload via SFTP to cPanel
+        uses: pressidium/lftp-mirror-action@v1
+        with:
+          host: 'ftp.bams.com.au'
+          username: 'portal_react@testportal.bams.com.au'
+          password: 'Wb*IVek5{^9t'
+          port: 21
+        
