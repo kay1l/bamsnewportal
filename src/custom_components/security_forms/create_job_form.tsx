@@ -265,7 +265,9 @@ export default function CreateJobForm() {
             />
           </div>
         </div>
-
+        <div className="mb-5 mt-6">
+          <h3 className="text-lg font-semibold mb-2">Client Details</h3>
+          </div>
         <FormField
           control={form.control}
           name="client"
@@ -301,7 +303,7 @@ export default function CreateJobForm() {
         />
 
         <div className="grid grid-cols-12 gap-4">
-          <div className="col-span-6">
+          <div className="col-span-3">
             <FormField
               control={form.control}
               name="contact"
@@ -322,7 +324,7 @@ export default function CreateJobForm() {
             />
           </div>
 
-          <div className="col-span-6">
+          <div className="col-span-3">
             <FormField
               control={form.control}
               name="phone"
@@ -342,10 +344,8 @@ export default function CreateJobForm() {
               )}
             />
           </div>
-        </div>
-
-        <div className="grid grid-cols-12 gap-4">
-          <div className="col-span-6">
+   
+          <div className="col-span-3">
             <FormField
               control={form.control}
               name="email"
@@ -362,7 +362,7 @@ export default function CreateJobForm() {
             />
           </div>
 
-          <div className="col-span-6">
+          <div className="col-span-3">
             <FormField
               control={form.control}
               name="mobile"
@@ -384,7 +384,11 @@ export default function CreateJobForm() {
           </div>
         </div>
 
-        <FormField
+ 
+
+        <div className="grid grid-cols-12 gap-4">
+          <div className="col-span-4">
+          <FormField
           control={form.control}
           name="street"
           render={({ field }) => (
@@ -398,9 +402,8 @@ export default function CreateJobForm() {
             </FormItem>
           )}
         />
-
-        <div className="grid grid-cols-12 gap-4">
-          <div className="col-span-6">
+          </div>
+          <div className="col-span-4">
             <FormField
               control={form.control}
               name="suburb"
@@ -417,7 +420,7 @@ export default function CreateJobForm() {
             />
           </div>
 
-          <div className="col-span-6">
+          <div className="col-span-4">
             <FormField
               control={form.control}
               name="postcode"
@@ -494,6 +497,9 @@ export default function CreateJobForm() {
 
         <div className="grid grid-cols-12 gap-4">
           <div className="col-span-12">
+          <div className="mb-5 mt-6">
+          <h3 className="text-lg font-semibold mb-2">Operation Details</h3>
+          </div>
             <FormField
               control={form.control}
               name="operation"
@@ -551,7 +557,7 @@ export default function CreateJobForm() {
 
 
         <div className="grid grid-cols-12 gap-4">
-          <div className="col-span-6">
+          <div className="col-span-3">
             <FormField
               control={form.control}
               name="project_contact"
@@ -572,7 +578,7 @@ export default function CreateJobForm() {
             />
           </div>
 
-          <div className="col-span-6">
+          <div className="col-span-3">
             <FormField
               control={form.control}
               name="project_phone"
@@ -592,10 +598,8 @@ export default function CreateJobForm() {
               )}
             />
           </div>
-        </div>
-
-        <div className="grid grid-cols-12 gap-4">
-          <div className="col-span-6">
+       
+          <div className="col-span-3">
             <FormField
               control={form.control}
               name="project_email"
@@ -616,7 +620,7 @@ export default function CreateJobForm() {
             />
           </div>
 
-          <div className="col-span-6">
+          <div className="col-span-3">
             <FormField
               control={form.control}
               name="project_mobile"
@@ -638,7 +642,11 @@ export default function CreateJobForm() {
           </div>
         </div>
 
-        <FormField
+     
+
+        <div className="grid grid-cols-12 gap-4">
+          <div className="col-span-4">
+          <FormField
           control={form.control}
           name="project_street"
           render={({ field }) => (
@@ -652,9 +660,8 @@ export default function CreateJobForm() {
             </FormItem>
           )}
         />
-
-        <div className="grid grid-cols-12 gap-4">
-          <div className="col-span-6">
+          </div>
+          <div className="col-span-4">
             <FormField
               control={form.control}
               name="project_suburb"
@@ -675,7 +682,7 @@ export default function CreateJobForm() {
             />
           </div>
 
-          <div className="col-span-6">
+          <div className="col-span-4">
             <FormField
               control={form.control}
               name="project_postcode"
@@ -748,6 +755,9 @@ export default function CreateJobForm() {
             </FormItem>
           )}
         />
+          <div className="mb-5 mt-6">
+          <h3 className="text-lg font-semibold mb-2">Invoicing Contact Details</h3>
+          </div>
         <FormField
           control={form.control}
           name="payment_person"
@@ -768,7 +778,7 @@ export default function CreateJobForm() {
         />
 
         <div className="grid grid-cols-12 gap-4">
-          <div className="col-span-6">
+          <div className="col-span-3">
             <FormField
               control={form.control}
               name="payment_contact"
@@ -789,7 +799,7 @@ export default function CreateJobForm() {
             />
           </div>
 
-          <div className="col-span-6">
+          <div className="col-span-3">
             <FormField
               control={form.control}
               name="payment_phone"
@@ -809,8 +819,45 @@ export default function CreateJobForm() {
               )}
             />
           </div>
-        </div>
+       
+          <div className="col-span-3">
+            <FormField
+              control={form.control}
+              name="payment_email"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Email</FormLabel>
+                  <FormControl>
+                    <Input placeholder="Email" type="email" {...field} />
+                  </FormControl>
 
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
+
+          <div className="col-span-3">
+            <FormField
+              control={form.control}
+              name="payment_mobile"
+              render={({ field }) => (
+                <FormItem className="flex flex-col items-start">
+                  <FormLabel>Mobile</FormLabel>
+                  <FormControl className="w-full">
+                    <PhoneInput
+                      placeholder="Mobile"
+                      {...field}
+                      defaultCountry="TR"
+                    />
+                  </FormControl>
+
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
+        </div>
         <div className="grid grid-cols-12 gap-4">
           <div className="col-span-6">
             <FormField
@@ -846,48 +893,11 @@ export default function CreateJobForm() {
             />
           </div>
         </div>
+     
 
         <div className="grid grid-cols-12 gap-4">
-          <div className="col-span-6">
-            <FormField
-              control={form.control}
-              name="payment_email"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Email</FormLabel>
-                  <FormControl>
-                    <Input placeholder="Email" type="email" {...field} />
-                  </FormControl>
-
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-          </div>
-
-          <div className="col-span-6">
-            <FormField
-              control={form.control}
-              name="payment_mobile"
-              render={({ field }) => (
-                <FormItem className="flex flex-col items-start">
-                  <FormLabel>Mobile</FormLabel>
-                  <FormControl className="w-full">
-                    <PhoneInput
-                      placeholder="Mobile"
-                      {...field}
-                      defaultCountry="TR"
-                    />
-                  </FormControl>
-
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-          </div>
-        </div>
-
-        <FormField
+          <div className="col-span-4">
+          <FormField
           control={form.control}
           name="payment_street"
           render={({ field }) => (
@@ -901,9 +911,8 @@ export default function CreateJobForm() {
             </FormItem>
           )}
         />
-
-        <div className="grid grid-cols-12 gap-4">
-          <div className="col-span-6">
+          </div>
+          <div className="col-span-4">
             <FormField
               control={form.control}
               name="payment_suburb"
@@ -920,7 +929,7 @@ export default function CreateJobForm() {
             />
           </div>
 
-          <div className="col-span-6">
+          <div className="col-span-4">
             <FormField
               control={form.control}
               name="payment_postcode"
@@ -972,17 +981,21 @@ export default function CreateJobForm() {
           </div>
         </div>
 
-
-        <FormField
-          control={form.control}
-          name="officer_contact"
-          render={({ field }) => (
-            <FormItem>
-              <div>
+        <div>
                 <label className="block text-lg font-medium text-gray-700 mb-1">
                   Bams Security Officer
                 </label>
               </div>
+   
+
+        <div className="grid grid-cols-12 gap-4">
+          <div className="col-span-4">
+          <FormField
+          control={form.control}
+          name="officer_contact"
+          render={({ field }) => (
+            <FormItem>
+            
               <FormLabel>Contact</FormLabel>
               <FormControl>
                 <Input placeholder="Full Name" type="" {...field} />
@@ -992,9 +1005,8 @@ export default function CreateJobForm() {
             </FormItem>
           )}
         />
-
-        <div className="grid grid-cols-12 gap-4">
-          <div className="col-span-6">
+          </div>
+          <div className="col-span-4">
             <FormField
               control={form.control}
               name="officer_email"
@@ -1011,7 +1023,7 @@ export default function CreateJobForm() {
             />
           </div>
 
-          <div className="col-span-6">
+          <div className="col-span-4">
             <FormField
               control={form.control}
               name="officer_mobile"
