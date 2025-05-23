@@ -24,8 +24,8 @@ jobs:
       - name: 🔧 Build project
         run: npm run build  
 
-      - name: 📁 Upload via SFTP to cPanel
-        uses: pressidium/lftp-mirror-action@v1
+      - name: 📁 FTP Deploy
+        uses: SamKirkland/FTP-Deploy-Action@v4
         with:
           host: 'ftp.bams.com.au'
           user: 'portal_react@testportal.bams.com.au'
