@@ -114,26 +114,27 @@ export default function UpdateJobForm() {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="space-y-4 w-full py-10 mx-auto py-10">
+        className="space-y-4 w-full py-10 mx-auto py-10"
+      >
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
-                 <div className="text-sm text-gray-700 md:col-span-2 flex flex-col justify-center">
-                   <p>
-                     <strong>Phone:</strong> +61 2 9826 0666 | <strong>Email:</strong>{" "}
-                     office@bams.com.au | <strong>Website:</strong> bams.com.au
-                   </p>
-                   <p className="mt-2">
-                     PO Box 698 Liverpool NSW 2170 <br /> <strong>ABN:</strong> 93 666
-                     476 375
-                   </p>
-                 </div>
-                 <div>
-                   <Image
-                     src={CompanyLogo}
-                     alt="Company Logo"
-                     className="w-32 md:w-full h-auto object-contain"
-                   />
-                 </div>
-               </div>
+          <div className="text-sm text-gray-700 md:col-span-2 flex flex-col justify-center">
+            <p>
+              <strong>Phone:</strong> +61 2 9826 0666 | <strong>Email:</strong>{" "}
+              office@bams.com.au | <strong>Website:</strong> bams.com.au
+            </p>
+            <p className="mt-2">
+              PO Box 698 Liverpool NSW 2170 <br /> <strong>ABN:</strong> 93 666
+              476 375
+            </p>
+          </div>
+          <div>
+            <Image
+              src={CompanyLogo}
+              alt="Company Logo"
+              className="w-32 md:w-full h-auto object-contain"
+            />
+          </div>
+        </div>
         <div className="text-center mb-4">
           <h2 className="text-2xl font-semibold">Reference Card</h2>
         </div>
@@ -375,23 +376,24 @@ export default function UpdateJobForm() {
           </div>
         </div>
 
-        <FormField
-          control={form.control}
-          name="street"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Street</FormLabel>
-              <FormControl>
-                <Input placeholder="Client Street" type="text" {...field} />
-              </FormControl>
-
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-
         <div className="grid grid-cols-12 gap-4">
-          <div className="col-span-6">
+          <div className="col-span-4">
+            <FormField
+              control={form.control}
+              name="street"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Street</FormLabel>
+                  <FormControl>
+                    <Input placeholder="Client Street" type="text" {...field} />
+                  </FormControl>
+
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
+          <div className="col-span-4">
             <FormField
               control={form.control}
               name="suburb"
@@ -408,7 +410,7 @@ export default function UpdateJobForm() {
             />
           </div>
 
-          <div className="col-span-6">
+          <div className="col-span-4">
             <FormField
               control={form.control}
               name="postcode"
@@ -594,23 +596,28 @@ export default function UpdateJobForm() {
           </div>
         </div>
 
-        <FormField
-          control={form.control}
-          name="project_street"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Street</FormLabel>
-              <FormControl>
-                <Input placeholder="Project Street" type="text" {...field} />
-              </FormControl>
-
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-
         <div className="grid grid-cols-12 gap-4">
-          <div className="col-span-6">
+          <div className="col-span-4">
+            <FormField
+              control={form.control}
+              name="project_street"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Street</FormLabel>
+                  <FormControl>
+                    <Input
+                      placeholder="Project Street"
+                      type="text"
+                      {...field}
+                    />
+                  </FormControl>
+
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
+          <div className="col-span-4">
             <FormField
               control={form.control}
               name="project_suburb"
@@ -631,7 +638,7 @@ export default function UpdateJobForm() {
             />
           </div>
 
-          <div className="col-span-6">
+          <div className="col-span-4">
             <FormField
               control={form.control}
               name="project_postcode"
@@ -826,23 +833,24 @@ export default function UpdateJobForm() {
           </div>
         </div>
 
-        <FormField
-          control={form.control}
-          name="payment_street"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Street</FormLabel>
-              <FormControl>
-                <Input placeholder="Street" type="" {...field} />
-              </FormControl>
-
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-
         <div className="grid grid-cols-12 gap-4">
-          <div className="col-span-6">
+          <div className="col-span-4">
+            <FormField
+              control={form.control}
+              name="payment_street"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Street</FormLabel>
+                  <FormControl>
+                    <Input placeholder="Street" type="" {...field} />
+                  </FormControl>
+
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
+          <div className="col-span-4">
             <FormField
               control={form.control}
               name="payment_suburb"
@@ -859,7 +867,7 @@ export default function UpdateJobForm() {
             />
           </div>
 
-          <div className="col-span-6">
+          <div className="col-span-4">
             <FormField
               control={form.control}
               name="payment_postcode"
@@ -929,28 +937,30 @@ export default function UpdateJobForm() {
             </FormItem>
           )}
         />
-        <FormField
-          control={form.control}
-          name="officer_contact"
-          render={({ field }) => (
-            <FormItem>
-              <div>
-                <label className="block text-lg font-medium text-gray-700 mb-1">
-                  Bams Traffic Control Officer
-                </label>
-              </div>
-              <FormLabel>Contact</FormLabel>
-              <FormControl>
-                <Input placeholder="Full Name" type="" {...field} />
-              </FormControl>
 
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-
+        <div>
+          <label className="block text-lg font-medium text-gray-700 mb-1">
+            Bams Traffic Control Officer
+          </label>
+        </div>
         <div className="grid grid-cols-12 gap-4">
-          <div className="col-span-6">
+          <div className="col-span-4">
+            <FormField
+              control={form.control}
+              name="officer_contact"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Contact</FormLabel>
+                  <FormControl>
+                    <Input placeholder="Full Name" type="" {...field} />
+                  </FormControl>
+
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
+          <div className="col-span-4">
             <FormField
               control={form.control}
               name="officer_email"
@@ -967,7 +977,7 @@ export default function UpdateJobForm() {
             />
           </div>
 
-          <div className="col-span-6">
+          <div className="col-span-4">
             <FormField
               control={form.control}
               name="officer_mobile"
@@ -991,7 +1001,7 @@ export default function UpdateJobForm() {
 
         <div className="grid grid-cols-12 gap-4 mt-12">
           <div className="col-span-6">
-            <Button type="button" className="w-full">
+            <Button  type="button" className="w-full">
               Cancel
             </Button>
           </div>
@@ -1009,8 +1019,6 @@ export default function UpdateJobForm() {
           </div>
         </div>
       </form>
-     
     </Form>
-    
   );
 }

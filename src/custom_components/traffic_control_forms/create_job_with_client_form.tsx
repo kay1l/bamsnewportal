@@ -282,23 +282,28 @@ export default function CreateJobWithClientForm() {
           </div>
         </div>
 
-        <FormField
-          control={form.control}
-          name="project_street"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Street</FormLabel>
-              <FormControl>
-                <Input placeholder="Project Street" type="text" {...field} />
-              </FormControl>
-
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-
         <div className="grid grid-cols-12 gap-4">
-          <div className="col-span-6">
+          <div className="col-span-4">
+            <FormField
+              control={form.control}
+              name="project_street"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Street</FormLabel>
+                  <FormControl>
+                    <Input
+                      placeholder="Project Street"
+                      type="text"
+                      {...field}
+                    />
+                  </FormControl>
+
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
+          <div className="col-span-4">
             <FormField
               control={form.control}
               name="project_suburb"
@@ -319,7 +324,7 @@ export default function CreateJobWithClientForm() {
             />
           </div>
 
-          <div className="col-span-6">
+          <div className="col-span-4">
             <FormField
               control={form.control}
               name="project_postcode"
@@ -529,23 +534,29 @@ export default function CreateJobWithClientForm() {
             />
           </div>
         </div>
-        <FormField
-          control={form.control}
-          name="payment_street"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Street</FormLabel>
-              <FormControl>
-                <Input placeholder="Project Street" type="text" {...field} />
-              </FormControl>
-
-              <FormMessage />
-            </FormItem>
-          )}
-        />
 
         <div className="grid grid-cols-12 gap-4">
-          <div className="col-span-6">
+          <div className="col-span-4">
+            <FormField
+              control={form.control}
+              name="payment_street"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Street</FormLabel>
+                  <FormControl>
+                    <Input
+                      placeholder="Project Street"
+                      type="text"
+                      {...field}
+                    />
+                  </FormControl>
+
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
+          <div className="col-span-4">
             <FormField
               control={form.control}
               name="payment_suburb"
@@ -566,7 +577,7 @@ export default function CreateJobWithClientForm() {
             />
           </div>
 
-          <div className="col-span-6">
+          <div className="col-span-4">
             <FormField
               control={form.control}
               name="payment_postcode"
@@ -622,28 +633,29 @@ export default function CreateJobWithClientForm() {
           </div>
         </div>
 
-        <FormField
-          control={form.control}
-          name="officer_contact"
-          render={({ field }) => (
-            <FormItem>
-              <div>
-                <label className="block text-lg font-medium text-gray-700 mb-1">
-                  Bams Traffic Control Officer
-                </label>
-              </div>
-              <FormLabel>Contact</FormLabel>
-              <FormControl>
-                <Input placeholder="Full Name" type="" {...field} />
-              </FormControl>
-
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-
+        <div>
+          <label className="block text-lg font-medium text-gray-700 mb-1">
+            Bams Traffic Control Officer
+          </label>
+        </div>
         <div className="grid grid-cols-12 gap-4">
-          <div className="col-span-6">
+          <div className="col-span-4">
+            <FormField
+              control={form.control}
+              name="officer_contact"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Contact</FormLabel>
+                  <FormControl>
+                    <Input placeholder="Full Name" type="" {...field} />
+                  </FormControl>
+
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
+          <div className="col-span-4">
             <FormField
               control={form.control}
               name="officer_email"
@@ -660,7 +672,7 @@ export default function CreateJobWithClientForm() {
             />
           </div>
 
-          <div className="col-span-6">
+          <div className="col-span-4">
             <FormField
               control={form.control}
               name="officer_mobile"

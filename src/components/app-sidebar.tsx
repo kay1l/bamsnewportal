@@ -7,6 +7,7 @@ import {
   ShieldCheck,
   Factory,
   Hammer,
+  Home,
 } from "lucide-react"
 import { NavMain } from "@/components/nav-main"
 import { NavUser } from "@/components/nav-user"
@@ -34,6 +35,11 @@ const data = {
     },
   ],
   navMain: [
+    {
+      title: "Dashboard",
+      url: "/dashboard",
+      icon: Home,
+    },
     {
       title: "Traffic Control",
       url: "#",

@@ -99,13 +99,12 @@ const datas = [
 ];
 
 export function CustomTable({
-  onEdit, 
-  basePath
+  onEdit,
+  basePath,
 }: {
   onEdit: (data: TableData) => void;
   basePath: string;
 }) {
-
   const router = useRouter();
   const [open, setOpen] = useState(false);
   const [selectedData, setSelectedData] = useState<TableData>({
@@ -148,17 +147,19 @@ export function CustomTable({
         </TableHeader>
         <TableBody>
           {datas.map((data) => (
-            <TableRow 
-            key={data.ref_num}
-            className="cursor-pointer hover:bg-muted"
-            onClick={() => router.push(`/${basePath}/jobfile_view/`)}
+            <TableRow
+              key={data.ref_num}
+              className="cursor-pointer hover:bg-muted"
+              onClick={() => router.push(`/${basePath}/jobfile_view/`)}
             >
               <TableCell className="font-medium">{data.ref_num}</TableCell>
               <TableCell>{data.project}</TableCell>
               <TableCell>{data.client}</TableCell>
               <TableCell>
                 <div className="font-medium">{data.contact}</div>
-                <div className="text-xs text-muted-foreground">{data.email}</div>
+                <div className="text-xs text-muted-foreground">
+                  {data.email}
+                </div>
               </TableCell>
               <TableCell>
                 <div className="text-xs">{data.mobile}</div>
@@ -170,25 +171,45 @@ export function CustomTable({
                     <SelectValue placeholder="Select status" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem className="text-xs" value="Quote">Quote</SelectItem>
-                    <SelectItem className="text-xs" value="Quoting">Quoting</SelectItem>
-                    <SelectItem className="text-xs" value="Quote Pending">Quote Pending</SelectItem>
-                    <SelectItem className="text-xs" value="Live Job">Live Job</SelectItem>
-                    <SelectItem className="text-xs" value="Ongoing Job">Ongoing Job</SelectItem>
-                    <SelectItem className="text-xs" value="Job Completed">Job Completed</SelectItem>
+                    <SelectItem className="text-xs" value="Quote">
+                      Quote
+                    </SelectItem>
+                    <SelectItem className="text-xs" value="Quoting">
+                      Quoting
+                    </SelectItem>
+                    <SelectItem className="text-xs" value="Quote Pending">
+                      Quote Pending
+                    </SelectItem>
+                    <SelectItem className="text-xs" value="Live Job">
+                      Live Job
+                    </SelectItem>
+                    <SelectItem className="text-xs" value="Ongoing Job">
+                      Ongoing Job
+                    </SelectItem>
+                    <SelectItem className="text-xs" value="Job Completed">
+                      Job Completed
+                    </SelectItem>
                   </SelectContent>
                 </Select>
               </TableCell>
               <TableCell className="flex gap-2 text-right">
-                <Button onClick={() => handleButtonEditClick(data)} variant="outline" size="icon">
+                <Button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleButtonEditClick(data);
+                  }}
+                  variant="outline"
+                  size="icon"
+                >
                   <Pencil className="h-4 w-4" />
                 </Button>
                 <Button
                   variant="destructive"
                   size="icon"
-                  onClick={() =>
-                    handleDeleteClick(data)
-                  }
+                  onClick={(e) => {
+                    e.stopPropagation(); 
+                    handleDeleteClick(data);
+                  }}
                 >
                   <Trash className="h-4 w-4" />
                 </Button>
