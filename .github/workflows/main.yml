@@ -21,8 +21,8 @@ jobs:
       - name: 📦 Install dependencies
         run: npm install  
 
-      - name: 🔧 Build project
-        run: npm run build  
+      - name: 🔧 Build and export project
+        run: npm run build && npm run export
 
       - name: 📁 FTP Deploy
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
@@ -30,5 +30,6 @@ jobs:
           server: 'ftp.bams.com.au'
           username: 'portal_react@testportal.bams.com.au'
           password: 'Wb*IVek5{^9t'
+          localDir: ./out
           port: 21
         
