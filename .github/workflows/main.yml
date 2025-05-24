@@ -30,7 +30,6 @@ jobs:
           server: 'ftp.bams.com.au'
           username: 'portal_react@testportal.bams.com.au'
           password: 'Wb*IVek5{^9t'
-          localDir: ./out
-          server-dir: public_html/react_portal/
+          localDir: out/
           port: 21
         
